@@ -1,0 +1,1693 @@
+<html>
+<head>
+<title>TestNG:  Surefire test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Surefire test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>18/0/54</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Sep 28 17:48:36 CAT 2015</td>
+</tr>
+<tr><td>Total time:</td><td>4 seconds (4736 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='discuss.repositories.BeekeeperCrudTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.repositories.BeekeeperCrudTest</td>
+<td><div><pre>java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:170)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:110)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance(AbstractTestNGSpringContextTests.java:145)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;harvestServiceImpl&apos;: Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: discuss.respository.HarvestRepository discuss.Services.Impl.HarvestServiceImpl.repository; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [discuss.respository.HarvestRepository] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:687)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.test.SpringApplicationContextLoader.loadContext(SpringApplicationContextLoader.java:104)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	... 33 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: discuss.respository.HarvestRepository discuss.Services.Impl.HarvestServiceImpl.repository; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [discuss.respository.HarvestRepository] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 48 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [discuss.respository.HarvestRepository] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1301)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1047)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 50 more
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2074687317", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2074687317'><pre>java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:170)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:110)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance(AbstractTestNGSpringContextTests.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:552)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:140)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;harvestServiceImpl&apos;: Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: discuss.respository.HarvestRepository discuss.Services.Impl.HarvestServiceImpl.repository; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [discuss.respository.HarvestRepository] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:687)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.test.SpringApplicationContextLoader.loadContext(SpringApplicationContextLoader.java:104)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	... 33 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: discuss.respository.HarvestRepository discuss.Services.Impl.HarvestServiceImpl.repository; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [discuss.respository.HarvestRepository] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 48 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [discuss.respository.HarvestRepository] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1301)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1047)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 50 more
+</pre></div></td>
+<td>0</td>
+<td>discuss.repositories.BeekeeperCrudTest@6cc7b4de</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='discuss.repositories.BucketCrudTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.repositories.BucketCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.BucketCrudTest@2bbaf4f0</td></tr>
+<tr>
+<td title='discuss.repositories.BucketCrudTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.repositories.BucketCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.BucketCrudTest@2bbaf4f0</td></tr>
+<tr>
+<td title='discuss.repositories.CustomerCrudTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.repositories.CustomerCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.CustomerCrudTest@32a068d1</td></tr>
+<tr>
+<td title='discuss.repositories.CustomerCrudTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.repositories.CustomerCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.CustomerCrudTest@32a068d1</td></tr>
+<tr>
+<td title='discuss.repositories.HarvestCrudTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.repositories.HarvestCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.HarvestCrudTest@69a10787</td></tr>
+<tr>
+<td title='discuss.repositories.HarvestCrudTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.repositories.HarvestCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.HarvestCrudTest@69a10787</td></tr>
+<tr>
+<td title='discuss.repositories.HiveCrudTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.repositories.HiveCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.HiveCrudTest@530612ba</td></tr>
+<tr>
+<td title='discuss.repositories.HiveCrudTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.repositories.HiveCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.HiveCrudTest@530612ba</td></tr>
+<tr>
+<td title='discuss.repositories.LocationCrudTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.repositories.LocationCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.LocationCrudTest@2f490758</td></tr>
+<tr>
+<td title='discuss.repositories.LocationCrudTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.repositories.LocationCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.LocationCrudTest@2f490758</td></tr>
+<tr>
+<td title='discuss.repositories.SalesCrudTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.repositories.SalesCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.SalesCrudTest@679b62af</td></tr>
+<tr>
+<td title='discuss.repositories.SalesCrudTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.repositories.SalesCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.SalesCrudTest@679b62af</td></tr>
+<tr>
+<td title='discuss.repositories.SubLocationCrudTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.repositories.SubLocationCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.SubLocationCrudTest@6e2c9341</td></tr>
+<tr>
+<td title='discuss.repositories.SubLocationCrudTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.repositories.SubLocationCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.SubLocationCrudTest@6e2c9341</td></tr>
+<tr>
+<td title='discuss.repositories.SuperCrudTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.repositories.SuperCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.SuperCrudTest@1442d7b5</td></tr>
+<tr>
+<td title='discuss.repositories.SuperCrudTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.repositories.SuperCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.SuperCrudTest@1442d7b5</td></tr>
+<tr>
+<td title='discuss.services.BeekeeperServiceTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.services.BeekeeperServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.BeekeeperServiceTest@70a9f84e</td></tr>
+<tr>
+<td title='discuss.services.BeekeeperServiceTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.services.BeekeeperServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.BeekeeperServiceTest@70a9f84e</td></tr>
+<tr>
+<td title='discuss.services.BucketServiceTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.services.BucketServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.BucketServiceTest@d6da883</td></tr>
+<tr>
+<td title='discuss.services.BucketServiceTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.services.BucketServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.BucketServiceTest@d6da883</td></tr>
+<tr>
+<td title='discuss.services.CustomerServiceTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.services.CustomerServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.CustomerServiceTest@799d4f69</td></tr>
+<tr>
+<td title='discuss.services.CustomerServiceTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.services.CustomerServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.CustomerServiceTest@799d4f69</td></tr>
+<tr>
+<td title='discuss.services.HarvestServiceTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.services.HarvestServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.HarvestServiceTest@276438c9</td></tr>
+<tr>
+<td title='discuss.services.HarvestServiceTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.services.HarvestServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.HarvestServiceTest@276438c9</td></tr>
+<tr>
+<td title='discuss.services.HiveServiceTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.services.HiveServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.HiveServiceTest@365c30cc</td></tr>
+<tr>
+<td title='discuss.services.HiveServiceTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.services.HiveServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.HiveServiceTest@365c30cc</td></tr>
+<tr>
+<td title='discuss.services.LocationServiceTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.services.LocationServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.LocationServiceTest@33b37288</td></tr>
+<tr>
+<td title='discuss.services.LocationServiceTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.services.LocationServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.LocationServiceTest@33b37288</td></tr>
+<tr>
+<td title='discuss.services.SaleServiceTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.services.SaleServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.SaleServiceTest@166fa74d</td></tr>
+<tr>
+<td title='discuss.services.SaleServiceTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.services.SaleServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.SaleServiceTest@166fa74d</td></tr>
+<tr>
+<td title='discuss.services.SubLocationServiceTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.services.SubLocationServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.SubLocationServiceTest@76a4d6c</td></tr>
+<tr>
+<td title='discuss.services.SubLocationServiceTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.services.SubLocationServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.SubLocationServiceTest@76a4d6c</td></tr>
+<tr>
+<td title='discuss.services.SuperServiceTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: discuss.services.SuperServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.SuperServiceTest@7181ae3f</td></tr>
+<tr>
+<td title='discuss.services.SuperServiceTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: discuss.services.SuperServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.SuperServiceTest@7181ae3f</td></tr>
+<tr>
+<td title='discuss.repositories.BeekeeperCrudTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.repositories.BeekeeperCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.BeekeeperCrudTest@6cc7b4de</td></tr>
+<tr>
+<td title='discuss.repositories.BucketCrudTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.repositories.BucketCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.BucketCrudTest@2bbaf4f0</td></tr>
+<tr>
+<td title='discuss.repositories.CustomerCrudTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.repositories.CustomerCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.CustomerCrudTest@32a068d1</td></tr>
+<tr>
+<td title='discuss.repositories.HarvestCrudTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.repositories.HarvestCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.HarvestCrudTest@69a10787</td></tr>
+<tr>
+<td title='discuss.repositories.HiveCrudTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.repositories.HiveCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.HiveCrudTest@530612ba</td></tr>
+<tr>
+<td title='discuss.repositories.LocationCrudTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.repositories.LocationCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.LocationCrudTest@2f490758</td></tr>
+<tr>
+<td title='discuss.repositories.SalesCrudTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.repositories.SalesCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.SalesCrudTest@679b62af</td></tr>
+<tr>
+<td title='discuss.repositories.SubLocationCrudTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.repositories.SubLocationCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.SubLocationCrudTest@6e2c9341</td></tr>
+<tr>
+<td title='discuss.repositories.SuperCrudTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.repositories.SuperCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.SuperCrudTest@1442d7b5</td></tr>
+<tr>
+<td title='discuss.services.BeekeeperServiceTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.services.BeekeeperServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.BeekeeperServiceTest@70a9f84e</td></tr>
+<tr>
+<td title='discuss.services.BucketServiceTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.services.BucketServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.BucketServiceTest@d6da883</td></tr>
+<tr>
+<td title='discuss.services.CustomerServiceTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.services.CustomerServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.CustomerServiceTest@799d4f69</td></tr>
+<tr>
+<td title='discuss.services.HarvestServiceTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.services.HarvestServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.HarvestServiceTest@276438c9</td></tr>
+<tr>
+<td title='discuss.services.HiveServiceTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.services.HiveServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.HiveServiceTest@365c30cc</td></tr>
+<tr>
+<td title='discuss.services.LocationServiceTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.services.LocationServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.LocationServiceTest@33b37288</td></tr>
+<tr>
+<td title='discuss.services.SaleServiceTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.services.SaleServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.SaleServiceTest@166fa74d</td></tr>
+<tr>
+<td title='discuss.services.SubLocationServiceTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.services.SubLocationServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.SubLocationServiceTest@76a4d6c</td></tr>
+<tr>
+<td title='discuss.services.SuperServiceTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: discuss.services.SuperServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.SuperServiceTest@7181ae3f</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='discuss.factories.BeekeeperFactoryTest.testCreate()'><b>testCreate</b><br>Test class: discuss.factories.BeekeeperFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.BeekeeperFactoryTest@4e4aea35</td></tr>
+<tr>
+<td title='discuss.factories.BucketFactoryTest.testCreate()'><b>testCreate</b><br>Test class: discuss.factories.BucketFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.BucketFactoryTest@70beb599</td></tr>
+<tr>
+<td title='discuss.factories.CustomerFactoryTest.testCreate()'><b>testCreate</b><br>Test class: discuss.factories.CustomerFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.CustomerFactoryTest@12028586</td></tr>
+<tr>
+<td title='discuss.factories.HarvestFactoryTest.testCreate()'><b>testCreate</b><br>Test class: discuss.factories.HarvestFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.HarvestFactoryTest@4e41089d</td></tr>
+<tr>
+<td title='discuss.factories.HiveFactoryTest.testCreate()'><b>testCreate</b><br>Test class: discuss.factories.HiveFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.HiveFactoryTest@1188e820</td></tr>
+<tr>
+<td title='discuss.factories.LocationFactoryTest.testCreate()'><b>testCreate</b><br>Test class: discuss.factories.LocationFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.LocationFactoryTest@290dbf45</td></tr>
+<tr>
+<td title='discuss.factories.SalesFactoryTest.testCreate()'><b>testCreate</b><br>Test class: discuss.factories.SalesFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.SalesFactoryTest@17776a8</td></tr>
+<tr>
+<td title='discuss.factories.SubLocationFactoryTest.testCreate()'><b>testCreate</b><br>Test class: discuss.factories.SubLocationFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.SubLocationFactoryTest@1e4a7dd4</td></tr>
+<tr>
+<td title='discuss.factories.SuperFactoryTest.testCreate()'><b>testCreate</b><br>Test class: discuss.factories.SuperFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.SuperFactoryTest@1ee807c6</td></tr>
+<tr>
+<td title='discuss.factories.BeekeeperFactoryTest.testUpdate()'><b>testUpdate</b><br>Test class: discuss.factories.BeekeeperFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.BeekeeperFactoryTest@4e4aea35</td></tr>
+<tr>
+<td title='discuss.factories.BucketFactoryTest.testUpdate()'><b>testUpdate</b><br>Test class: discuss.factories.BucketFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.BucketFactoryTest@70beb599</td></tr>
+<tr>
+<td title='discuss.factories.CustomerFactoryTest.testUpdate()'><b>testUpdate</b><br>Test class: discuss.factories.CustomerFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.CustomerFactoryTest@12028586</td></tr>
+<tr>
+<td title='discuss.factories.HarvestFactoryTest.testUpdate()'><b>testUpdate</b><br>Test class: discuss.factories.HarvestFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.HarvestFactoryTest@4e41089d</td></tr>
+<tr>
+<td title='discuss.factories.HiveFactoryTest.testUpdate()'><b>testUpdate</b><br>Test class: discuss.factories.HiveFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.HiveFactoryTest@1188e820</td></tr>
+<tr>
+<td title='discuss.factories.LocationFactoryTest.testUpdate()'><b>testUpdate</b><br>Test class: discuss.factories.LocationFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.LocationFactoryTest@290dbf45</td></tr>
+<tr>
+<td title='discuss.factories.SalesFactoryTest.testUpdate()'><b>testUpdate</b><br>Test class: discuss.factories.SalesFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.SalesFactoryTest@17776a8</td></tr>
+<tr>
+<td title='discuss.factories.SubLocationFactoryTest.testUpdate()'><b>testUpdate</b><br>Test class: discuss.factories.SubLocationFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.SubLocationFactoryTest@1e4a7dd4</td></tr>
+<tr>
+<td title='discuss.factories.SuperFactoryTest.testUpdate()'><b>testUpdate</b><br>Test class: discuss.factories.SuperFactoryTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.factories.SuperFactoryTest@1ee807c6</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='discuss.repositories.BeekeeperCrudTest.create()'><b>create</b><br>Test class: discuss.repositories.BeekeeperCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.BeekeeperCrudTest@6cc7b4de</td></tr>
+<tr>
+<td title='discuss.repositories.BucketCrudTest.create()'><b>create</b><br>Test class: discuss.repositories.BucketCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.BucketCrudTest@2bbaf4f0</td></tr>
+<tr>
+<td title='discuss.repositories.CustomerCrudTest.create()'><b>create</b><br>Test class: discuss.repositories.CustomerCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.CustomerCrudTest@32a068d1</td></tr>
+<tr>
+<td title='discuss.repositories.HarvestCrudTest.create()'><b>create</b><br>Test class: discuss.repositories.HarvestCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.HarvestCrudTest@69a10787</td></tr>
+<tr>
+<td title='discuss.repositories.HiveCrudTest.create()'><b>create</b><br>Test class: discuss.repositories.HiveCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.HiveCrudTest@530612ba</td></tr>
+<tr>
+<td title='discuss.repositories.LocationCrudTest.create()'><b>create</b><br>Test class: discuss.repositories.LocationCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.LocationCrudTest@2f490758</td></tr>
+<tr>
+<td title='discuss.repositories.SalesCrudTest.create()'><b>create</b><br>Test class: discuss.repositories.SalesCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.SalesCrudTest@679b62af</td></tr>
+<tr>
+<td title='discuss.repositories.SubLocationCrudTest.create()'><b>create</b><br>Test class: discuss.repositories.SubLocationCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.SubLocationCrudTest@6e2c9341</td></tr>
+<tr>
+<td title='discuss.repositories.SuperCrudTest.create()'><b>create</b><br>Test class: discuss.repositories.SuperCrudTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.repositories.SuperCrudTest@1442d7b5</td></tr>
+<tr>
+<td title='discuss.services.BeekeeperServiceTest.create()'><b>create</b><br>Test class: discuss.services.BeekeeperServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.BeekeeperServiceTest@70a9f84e</td></tr>
+<tr>
+<td title='discuss.services.BucketServiceTest.create()'><b>create</b><br>Test class: discuss.services.BucketServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.BucketServiceTest@d6da883</td></tr>
+<tr>
+<td title='discuss.services.CustomerServiceTest.create()'><b>create</b><br>Test class: discuss.services.CustomerServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.CustomerServiceTest@799d4f69</td></tr>
+<tr>
+<td title='discuss.services.HarvestServiceTest.create()'><b>create</b><br>Test class: discuss.services.HarvestServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.HarvestServiceTest@276438c9</td></tr>
+<tr>
+<td title='discuss.services.HiveServiceTest.create()'><b>create</b><br>Test class: discuss.services.HiveServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.HiveServiceTest@365c30cc</td></tr>
+<tr>
+<td title='discuss.services.LocationServiceTest.create()'><b>create</b><br>Test class: discuss.services.LocationServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.LocationServiceTest@33b37288</td></tr>
+<tr>
+<td title='discuss.services.SaleServiceTest.create()'><b>create</b><br>Test class: discuss.services.SaleServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.SaleServiceTest@166fa74d</td></tr>
+<tr>
+<td title='discuss.services.SubLocationServiceTest.create()'><b>create</b><br>Test class: discuss.services.SubLocationServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.SubLocationServiceTest@76a4d6c</td></tr>
+<tr>
+<td title='discuss.services.SuperServiceTest.create()'><b>create</b><br>Test class: discuss.services.SuperServiceTest</td>
+<td></td>
+<td>0</td>
+<td>discuss.services.SuperServiceTest@7181ae3f</td></tr>
+<tr>
+<td title='discuss.repositories.BeekeeperCrudTest.delete()'><b>delete</b><br>Test class: discuss.repositories.BeekeeperCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method BeekeeperCrudTest.delete()[pri:0, instance:discuss.repositories.BeekeeperCrudTest@6cc7b4de] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1232631679", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1232631679'><pre>java.lang.Throwable: Method BeekeeperCrudTest.delete()[pri:0, instance:discuss.repositories.BeekeeperCrudTest@6cc7b4de] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.BucketCrudTest.delete()'><b>delete</b><br>Test class: discuss.repositories.BucketCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method BucketCrudTest.delete()[pri:0, instance:discuss.repositories.BucketCrudTest@2bbaf4f0] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace400593724", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace400593724'><pre>java.lang.Throwable: Method BucketCrudTest.delete()[pri:0, instance:discuss.repositories.BucketCrudTest@2bbaf4f0] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.CustomerCrudTest.delete()'><b>delete</b><br>Test class: discuss.repositories.CustomerCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method CustomerCrudTest.delete()[pri:0, instance:discuss.repositories.CustomerCrudTest@32a068d1] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace265330243", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace265330243'><pre>java.lang.Throwable: Method CustomerCrudTest.delete()[pri:0, instance:discuss.repositories.CustomerCrudTest@32a068d1] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.HarvestCrudTest.delete()'><b>delete</b><br>Test class: discuss.repositories.HarvestCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method HarvestCrudTest.delete()[pri:0, instance:discuss.repositories.HarvestCrudTest@69a10787] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1924999281", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1924999281'><pre>java.lang.Throwable: Method HarvestCrudTest.delete()[pri:0, instance:discuss.repositories.HarvestCrudTest@69a10787] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.HiveCrudTest.delete()'><b>delete</b><br>Test class: discuss.repositories.HiveCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method HiveCrudTest.delete()[pri:0, instance:discuss.repositories.HiveCrudTest@530612ba] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1094446968", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1094446968'><pre>java.lang.Throwable: Method HiveCrudTest.delete()[pri:0, instance:discuss.repositories.HiveCrudTest@530612ba] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.LocationCrudTest.delete()'><b>delete</b><br>Test class: discuss.repositories.LocationCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method LocationCrudTest.delete()[pri:0, instance:discuss.repositories.LocationCrudTest@2f490758] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace61041877", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace61041877'><pre>java.lang.Throwable: Method LocationCrudTest.delete()[pri:0, instance:discuss.repositories.LocationCrudTest@2f490758] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.SalesCrudTest.delete()'><b>delete</b><br>Test class: discuss.repositories.SalesCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method SalesCrudTest.delete()[pri:0, instance:discuss.repositories.SalesCrudTest@679b62af] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1945886568", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1945886568'><pre>java.lang.Throwable: Method SalesCrudTest.delete()[pri:0, instance:discuss.repositories.SalesCrudTest@679b62af] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.SubLocationCrudTest.delete()'><b>delete</b><br>Test class: discuss.repositories.SubLocationCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method SubLocationCrudTest.delete()[pri:0, instance:discuss.repositories.SubLocationCrudTest@6e2c9341] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1723810021", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1723810021'><pre>java.lang.Throwable: Method SubLocationCrudTest.delete()[pri:0, instance:discuss.repositories.SubLocationCrudTest@6e2c9341] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.SuperCrudTest.delete()'><b>delete</b><br>Test class: discuss.repositories.SuperCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method SuperCrudTest.delete()[pri:0, instance:discuss.repositories.SuperCrudTest@1442d7b5] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace854795811", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace854795811'><pre>java.lang.Throwable: Method SuperCrudTest.delete()[pri:0, instance:discuss.repositories.SuperCrudTest@1442d7b5] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.BeekeeperCrudTest.read()'><b>read</b><br>Test class: discuss.repositories.BeekeeperCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method BeekeeperCrudTest.read()[pri:0, instance:discuss.repositories.BeekeeperCrudTest@6cc7b4de] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace462487268", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace462487268'><pre>java.lang.Throwable: Method BeekeeperCrudTest.read()[pri:0, instance:discuss.repositories.BeekeeperCrudTest@6cc7b4de] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.BucketCrudTest.read()'><b>read</b><br>Test class: discuss.repositories.BucketCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method BucketCrudTest.read()[pri:0, instance:discuss.repositories.BucketCrudTest@2bbaf4f0] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1193577032", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1193577032'><pre>java.lang.Throwable: Method BucketCrudTest.read()[pri:0, instance:discuss.repositories.BucketCrudTest@2bbaf4f0] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.CustomerCrudTest.read()'><b>read</b><br>Test class: discuss.repositories.CustomerCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method CustomerCrudTest.read()[pri:0, instance:discuss.repositories.CustomerCrudTest@32a068d1] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1874901958", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1874901958'><pre>java.lang.Throwable: Method CustomerCrudTest.read()[pri:0, instance:discuss.repositories.CustomerCrudTest@32a068d1] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.HarvestCrudTest.read()'><b>read</b><br>Test class: discuss.repositories.HarvestCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method HarvestCrudTest.read()[pri:0, instance:discuss.repositories.HarvestCrudTest@69a10787] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1670849676", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1670849676'><pre>java.lang.Throwable: Method HarvestCrudTest.read()[pri:0, instance:discuss.repositories.HarvestCrudTest@69a10787] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.HiveCrudTest.read()'><b>read</b><br>Test class: discuss.repositories.HiveCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method HiveCrudTest.read()[pri:0, instance:discuss.repositories.HiveCrudTest@530612ba] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace132372445", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace132372445'><pre>java.lang.Throwable: Method HiveCrudTest.read()[pri:0, instance:discuss.repositories.HiveCrudTest@530612ba] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.LocationCrudTest.read()'><b>read</b><br>Test class: discuss.repositories.LocationCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method LocationCrudTest.read()[pri:0, instance:discuss.repositories.LocationCrudTest@2f490758] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace340792090", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace340792090'><pre>java.lang.Throwable: Method LocationCrudTest.read()[pri:0, instance:discuss.repositories.LocationCrudTest@2f490758] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.SalesCrudTest.read()'><b>read</b><br>Test class: discuss.repositories.SalesCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method SalesCrudTest.read()[pri:0, instance:discuss.repositories.SalesCrudTest@679b62af] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1933329999", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1933329999'><pre>java.lang.Throwable: Method SalesCrudTest.read()[pri:0, instance:discuss.repositories.SalesCrudTest@679b62af] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.SubLocationCrudTest.read()'><b>read</b><br>Test class: discuss.repositories.SubLocationCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method SubLocationCrudTest.read()[pri:0, instance:discuss.repositories.SubLocationCrudTest@6e2c9341] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1500821480", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1500821480'><pre>java.lang.Throwable: Method SubLocationCrudTest.read()[pri:0, instance:discuss.repositories.SubLocationCrudTest@6e2c9341] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.SuperCrudTest.read()'><b>read</b><br>Test class: discuss.repositories.SuperCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method SuperCrudTest.read()[pri:0, instance:discuss.repositories.SuperCrudTest@1442d7b5] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1515282013", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1515282013'><pre>java.lang.Throwable: Method SuperCrudTest.read()[pri:0, instance:discuss.repositories.SuperCrudTest@1442d7b5] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.services.BeekeeperServiceTest.read()'><b>read</b><br>Test class: discuss.services.BeekeeperServiceTest</td>
+<td><div><pre>java.lang.Throwable: Method BeekeeperServiceTest.read()[pri:0, instance:discuss.services.BeekeeperServiceTest@70a9f84e] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2115368148", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2115368148'><pre>java.lang.Throwable: Method BeekeeperServiceTest.read()[pri:0, instance:discuss.services.BeekeeperServiceTest@70a9f84e] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.services.BucketServiceTest.read()'><b>read</b><br>Test class: discuss.services.BucketServiceTest</td>
+<td><div><pre>java.lang.Throwable: Method BucketServiceTest.read()[pri:0, instance:discuss.services.BucketServiceTest@d6da883] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1953251612", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1953251612'><pre>java.lang.Throwable: Method BucketServiceTest.read()[pri:0, instance:discuss.services.BucketServiceTest@d6da883] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.services.CustomerServiceTest.read()'><b>read</b><br>Test class: discuss.services.CustomerServiceTest</td>
+<td><div><pre>java.lang.Throwable: Method CustomerServiceTest.read()[pri:0, instance:discuss.services.CustomerServiceTest@799d4f69] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1303238288", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1303238288'><pre>java.lang.Throwable: Method CustomerServiceTest.read()[pri:0, instance:discuss.services.CustomerServiceTest@799d4f69] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.services.HarvestServiceTest.read()'><b>read</b><br>Test class: discuss.services.HarvestServiceTest</td>
+<td><div><pre>java.lang.Throwable: Method HarvestServiceTest.read()[pri:0, instance:discuss.services.HarvestServiceTest@276438c9] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1526730726", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1526730726'><pre>java.lang.Throwable: Method HarvestServiceTest.read()[pri:0, instance:discuss.services.HarvestServiceTest@276438c9] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.services.HiveServiceTest.read()'><b>read</b><br>Test class: discuss.services.HiveServiceTest</td>
+<td><div><pre>java.lang.Throwable: Method HiveServiceTest.read()[pri:0, instance:discuss.services.HiveServiceTest@365c30cc] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1229754153", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1229754153'><pre>java.lang.Throwable: Method HiveServiceTest.read()[pri:0, instance:discuss.services.HiveServiceTest@365c30cc] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.services.LocationServiceTest.read()'><b>read</b><br>Test class: discuss.services.LocationServiceTest</td>
+<td><div><pre>java.lang.Throwable: Method LocationServiceTest.read()[pri:0, instance:discuss.services.LocationServiceTest@33b37288] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1557752641", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1557752641'><pre>java.lang.Throwable: Method LocationServiceTest.read()[pri:0, instance:discuss.services.LocationServiceTest@33b37288] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.services.SaleServiceTest.read()'><b>read</b><br>Test class: discuss.services.SaleServiceTest</td>
+<td><div><pre>java.lang.Throwable: Method SaleServiceTest.read()[pri:0, instance:discuss.services.SaleServiceTest@166fa74d] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace7508078", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace7508078'><pre>java.lang.Throwable: Method SaleServiceTest.read()[pri:0, instance:discuss.services.SaleServiceTest@166fa74d] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.services.SubLocationServiceTest.read()'><b>read</b><br>Test class: discuss.services.SubLocationServiceTest</td>
+<td><div><pre>java.lang.Throwable: Method SubLocationServiceTest.read()[pri:0, instance:discuss.services.SubLocationServiceTest@76a4d6c] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1373885310", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1373885310'><pre>java.lang.Throwable: Method SubLocationServiceTest.read()[pri:0, instance:discuss.services.SubLocationServiceTest@76a4d6c] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.services.SuperServiceTest.read()'><b>read</b><br>Test class: discuss.services.SuperServiceTest</td>
+<td><div><pre>java.lang.Throwable: Method SuperServiceTest.read()[pri:0, instance:discuss.services.SuperServiceTest@7181ae3f] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace56840345", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace56840345'><pre>java.lang.Throwable: Method SuperServiceTest.read()[pri:0, instance:discuss.services.SuperServiceTest@7181ae3f] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.BeekeeperCrudTest.update()'><b>update</b><br>Test class: discuss.repositories.BeekeeperCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method BeekeeperCrudTest.update()[pri:0, instance:discuss.repositories.BeekeeperCrudTest@6cc7b4de] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace890488908", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace890488908'><pre>java.lang.Throwable: Method BeekeeperCrudTest.update()[pri:0, instance:discuss.repositories.BeekeeperCrudTest@6cc7b4de] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.BucketCrudTest.update()'><b>update</b><br>Test class: discuss.repositories.BucketCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method BucketCrudTest.update()[pri:0, instance:discuss.repositories.BucketCrudTest@2bbaf4f0] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace592048461", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace592048461'><pre>java.lang.Throwable: Method BucketCrudTest.update()[pri:0, instance:discuss.repositories.BucketCrudTest@2bbaf4f0] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.CustomerCrudTest.update()'><b>update</b><br>Test class: discuss.repositories.CustomerCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method CustomerCrudTest.update()[pri:0, instance:discuss.repositories.CustomerCrudTest@32a068d1] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1886247880", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1886247880'><pre>java.lang.Throwable: Method CustomerCrudTest.update()[pri:0, instance:discuss.repositories.CustomerCrudTest@32a068d1] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.HarvestCrudTest.update()'><b>update</b><br>Test class: discuss.repositories.HarvestCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method HarvestCrudTest.update()[pri:0, instance:discuss.repositories.HarvestCrudTest@69a10787] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace636886060", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace636886060'><pre>java.lang.Throwable: Method HarvestCrudTest.update()[pri:0, instance:discuss.repositories.HarvestCrudTest@69a10787] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.HiveCrudTest.update()'><b>update</b><br>Test class: discuss.repositories.HiveCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method HiveCrudTest.update()[pri:0, instance:discuss.repositories.HiveCrudTest@530612ba] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1063494931", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1063494931'><pre>java.lang.Throwable: Method HiveCrudTest.update()[pri:0, instance:discuss.repositories.HiveCrudTest@530612ba] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.LocationCrudTest.update()'><b>update</b><br>Test class: discuss.repositories.LocationCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method LocationCrudTest.update()[pri:0, instance:discuss.repositories.LocationCrudTest@2f490758] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1602154134", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1602154134'><pre>java.lang.Throwable: Method LocationCrudTest.update()[pri:0, instance:discuss.repositories.LocationCrudTest@2f490758] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.SalesCrudTest.update()'><b>update</b><br>Test class: discuss.repositories.SalesCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method SalesCrudTest.update()[pri:0, instance:discuss.repositories.SalesCrudTest@679b62af] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1193749715", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1193749715'><pre>java.lang.Throwable: Method SalesCrudTest.update()[pri:0, instance:discuss.repositories.SalesCrudTest@679b62af] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.SubLocationCrudTest.update()'><b>update</b><br>Test class: discuss.repositories.SubLocationCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method SubLocationCrudTest.update()[pri:0, instance:discuss.repositories.SubLocationCrudTest@6e2c9341] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace674882504", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace674882504'><pre>java.lang.Throwable: Method SubLocationCrudTest.update()[pri:0, instance:discuss.repositories.SubLocationCrudTest@6e2c9341] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='discuss.repositories.SuperCrudTest.update()'><b>update</b><br>Test class: discuss.repositories.SuperCrudTest</td>
+<td><div><pre>java.lang.Throwable: Method SuperCrudTest.update()[pri:0, instance:discuss.repositories.SuperCrudTest@1442d7b5] depends on not successfully finished methods
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1111100957", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1111100957'><pre>java.lang.Throwable: Method SuperCrudTest.update()[pri:0, instance:discuss.repositories.SuperCrudTest@1442d7b5] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1099)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+</body>
+</html>

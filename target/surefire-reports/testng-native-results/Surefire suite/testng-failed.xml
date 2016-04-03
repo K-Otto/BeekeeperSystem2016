@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test name="Surefire test(failed)">
+    <classes>
+      <class name="discuss.repositories.SalesCrudTest">
+        <methods>
+          <include name="read"/>
+          <include name="delete"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="update"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="create"/>
+        </methods>
+      </class> <!-- discuss.repositories.SalesCrudTest -->
+      <class name="discuss.services.BucketServiceTest">
+        <methods>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="read"/>
+          <include name="create"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- discuss.services.BucketServiceTest -->
+      <class name="discuss.services.CustomerServiceTest">
+        <methods>
+          <include name="read"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="create"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- discuss.services.CustomerServiceTest -->
+      <class name="discuss.repositories.HiveCrudTest">
+        <methods>
+          <include name="read"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="create"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="update"/>
+          <include name="delete"/>
+        </methods>
+      </class> <!-- discuss.repositories.HiveCrudTest -->
+      <class name="discuss.services.BeekeeperServiceTest">
+        <methods>
+          <include name="create"/>
+          <include name="read"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- discuss.services.BeekeeperServiceTest -->
+      <class name="discuss.repositories.LocationCrudTest">
+        <methods>
+          <include name="read"/>
+          <include name="update"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="create"/>
+          <include name="delete"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- discuss.repositories.LocationCrudTest -->
+      <class name="discuss.services.SaleServiceTest">
+        <methods>
+          <include name="create"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="read"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- discuss.services.SaleServiceTest -->
+      <class name="discuss.services.HarvestServiceTest">
+        <methods>
+          <include name="read"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="create"/>
+        </methods>
+      </class> <!-- discuss.services.HarvestServiceTest -->
+      <class name="discuss.services.LocationServiceTest">
+        <methods>
+          <include name="create"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="read"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- discuss.services.LocationServiceTest -->
+      <class name="discuss.services.SuperServiceTest">
+        <methods>
+          <include name="read"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="create"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- discuss.services.SuperServiceTest -->
+      <class name="discuss.repositories.SubLocationCrudTest">
+        <methods>
+          <include name="read"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="create"/>
+          <include name="update"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="delete"/>
+        </methods>
+      </class> <!-- discuss.repositories.SubLocationCrudTest -->
+      <class name="discuss.repositories.HarvestCrudTest">
+        <methods>
+          <include name="create"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="update"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="read"/>
+          <include name="delete"/>
+        </methods>
+      </class> <!-- discuss.repositories.HarvestCrudTest -->
+      <class name="discuss.repositories.BucketCrudTest">
+        <methods>
+          <include name="read"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="delete"/>
+          <include name="update"/>
+          <include name="create"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- discuss.repositories.BucketCrudTest -->
+      <class name="discuss.repositories.SuperCrudTest">
+        <methods>
+          <include name="read"/>
+          <include name="create"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="update"/>
+          <include name="delete"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- discuss.repositories.SuperCrudTest -->
+      <class name="discuss.services.SubLocationServiceTest">
+        <methods>
+          <include name="create"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="read"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- discuss.services.SubLocationServiceTest -->
+      <class name="discuss.repositories.BeekeeperCrudTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="read"/>
+          <include name="delete"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="create"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="update"/>
+        </methods>
+      </class> <!-- discuss.repositories.BeekeeperCrudTest -->
+      <class name="discuss.repositories.CustomerCrudTest">
+        <methods>
+          <include name="read"/>
+          <include name="update"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="create"/>
+          <include name="delete"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- discuss.repositories.CustomerCrudTest -->
+      <class name="discuss.services.HiveServiceTest">
+        <methods>
+          <include name="read"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="create"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- discuss.services.HiveServiceTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->
