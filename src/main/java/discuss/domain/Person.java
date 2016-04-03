@@ -20,7 +20,7 @@ public class Person {
     private Person() {
     }
 
-    public Long getBeeId() {
+    public Long getPersonId() {
         return personID;
     }
     public String getFirstName() {

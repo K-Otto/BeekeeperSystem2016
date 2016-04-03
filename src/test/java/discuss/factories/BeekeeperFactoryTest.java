@@ -33,8 +33,8 @@ public class BeekeeperFactoryTest {
                 .copy(beekeeper)
                 .persons(persons)
                 .build();
-        Assert.assertEquals(newBeekeeper.getSalary‭‭(),"Cape");
-        Assert.assertEquals(beekeeper.getSalary‭‭(), "Cape");
+        Assert.assertEquals(newBeekeeper.getSalary‭‭(),10.00);
+        Assert.assertEquals(beekeeper.getSalary‭‭(), 10.00);
 
     }
 }

@@ -18,10 +18,16 @@ public class BeekeeperServiceImpl  implements BeekeeperService{
 
 
     @Override
-    public String saveBeekeeper(double salary,
-                                Person person) {
+    public String saveBeekeeper(
+                                String firstname,
+                                String lastname,
+                                String email,
+                                double salary) {
+        Person persons = PersonFactory
+                .create(firstname, lastname, email);
+
         Beekeeper beekeepers = BeekeeperFactory
-                .create(salary, person);
+                .create(salary, persons);
 
         return repository.save(beekeepers).toString();
 

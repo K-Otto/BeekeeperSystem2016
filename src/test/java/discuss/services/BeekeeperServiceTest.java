@@ -18,42 +18,43 @@ import org.testng.annotations.Test;
 @WebAppConfiguration
 public class BeekeeperServiceTest  extends AbstractTestNGSpringContextTests {
 
-    private long id;
-    private Beekeeper beekeeperGlobal;
+        private Long id;
+        private Beekeeper beekeeperGlobal;
 
-    @Autowired
-    private BeekeeperService service;
+        @Autowired
+        private BeekeeperService service;
 
-    @Test
-    public void create() throws Exception {
-        Beekeeper beekeepers = BeekeeperFactory
-                .create("Karl", "Otto", "Karl@gmail.com");
+        @Test
+        public void create() throws Exception {
+            Person person = PersonFactory
+                    .create("Karl", "Otto", "Karl@gmail.com");
+            Beekeeper beekeepers = BeekeeperFactory
+                    .create(10.00,  person);
 
-        service.saveBeekeeper(beekeepers.getFirstName(),
-                beekeepers.getLastName(),
-                beekeepers.getEmail());
+            service.saveBeekeeper(
+                    person.getFirstName(),
+                    person.getLastName(),
+                    person.getEmail(),
+                    beekeepers.getSalary‭‭());
 
 
-        id = beekeepers.getBeeId();
-        beekeeperGlobal = beekeepers;
-        Assert.assertNotNull(beekeepers);
+            id = beekeepers.getBeekeeperID();
+            beekeeperGlobal = beekeepers;
+            Assert.assertNotNull(beekeepers);
+        }
+
+        @Test(dependsOnMethods = "create")
+        public void read() throws Exception {
+            // Get subject
+            //   String idtest = id + "";
+            //   Long longId = Long.parseLong(idtest);
+            //   Location locations = service.getLocation(1);
+            //   id = locations.getLocID();
+            //  locationGlobal = service.getLocation(id);
+            //  Assert.assertNotNull(locationGlobal);
+        }
+
     }
-
-    @Test(dependsOnMethods = "create")
-    public void read() throws Exception {
-        // Get subject
-        String idtest = id + "";
-
-        long longId = Long.parseLong(idtest);
-        Beekeeper beekeepers = service.getBeekeeper(1);
-        id = beekeepers.getBeeId();
-        beekeeperGlobal = service.getBeekeeper(id);
-
-        Assert.assertNotNull(beekeeperGlobal);
-
-    }
-
-}
 
 
 
