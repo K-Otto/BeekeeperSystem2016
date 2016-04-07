@@ -36,15 +36,16 @@ public class OrderlineFactoryTest {
         Order order = OrderFactory.create("March", customers, salesman);
 
         Orderline orderline = OrderlineFactory.create(10.00, 22.00,product, order);
+        Assert.assertEquals(orderline.getUnitPrice(), 10.00);
         Orderline newOrderline = new Orderline
                 .Builder(orderline.getQuantity())
                 .copy(orderline)
-                .unitPrice(22.00)
+                .unitPrice(26.00)
                 .product(product)
                 .order(order)
                 .build();
-        Assert.assertEquals(newOrderline.getQuantity(),22.00);
-        Assert.assertEquals(orderline.getQuantity(), 22.00);
+        Assert.assertEquals(newOrderline.getUnitPrice(),26.00);
+
 
     }
 }

@@ -37,13 +37,14 @@ public class HiveFactoryTest {
 
 
         Hive hives = HiveFactory.create("Fossil", subLocations);
+        Assert.assertEquals(hives.getHiveState(), "Fossil");
         Hive newHives = new Hive
-                .Builder("Fossil")
-                .copy(hives)
+                .Builder("Water")
+
                 .subLocations(subLocations)
                 .build();
-        Assert.assertEquals(newHives.getHiveState(),"Fossil");
-        Assert.assertEquals(hives.getHiveState(), "Fossil");
+        Assert.assertEquals(newHives.getHiveState(),"Water");
+
 
     }
 }

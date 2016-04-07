@@ -33,15 +33,16 @@ public class SalesFactoryTest {
         Customer customers = CustomerFactory.create("",persons);
 
         Sales role = SalesFactory.create("date", 22.00,buckets, customers);
+        Assert.assertEquals(role.getPrice(), 22.00);
         Sales newSubLocation = new Sales
                 .Builder(role.getSalesDate())
                 .copy(role)
-                .price(22.00)
+                .price(23.00)
                 .customers(customers)
                 .buckets(buckets)
                 .build();
-        Assert.assertEquals(newSubLocation.getSalesDate(),"date");
-        Assert.assertEquals(role.getSalesDate(), "date");
+        Assert.assertEquals(newSubLocation.getPrice(),23.00);
+
 
     }
 }

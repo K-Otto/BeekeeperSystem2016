@@ -33,14 +33,15 @@ public class OrderFactoryTest {
         Customer customers = CustomerFactory.create("",persons);
         Salesman salesman = SalesmanFactory.create(10.00, persons);
         Order order = OrderFactory.create("March", customers, salesman);
+        Assert.assertEquals(order.getSalesDate(), "March");
         Order newOrder = new Order
-                .Builder(order.getSalesDate())
-                .copy(order)
+                .Builder("April")
+
                 .customers(customers)
                 .salesman(salesman)
                 .build();
-        Assert.assertEquals(newOrder.getSalesDate(),"March");
-        Assert.assertEquals(order.getSalesDate(), "March");
+        Assert.assertEquals(newOrder.getSalesDate(),"April");
+
 
     }
 }

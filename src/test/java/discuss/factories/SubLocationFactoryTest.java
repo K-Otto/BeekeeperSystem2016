@@ -35,13 +35,13 @@ public class SubLocationFactoryTest {
 
 
         SubLocation subLocations = SubLocationFactory.create("Fossil", locations);
+        Assert.assertEquals(subLocations.getSubLocationName(), "Fossil");
         SubLocation newSubLocation = new SubLocation
-                .Builder("Fossil")
-                .copy(subLocations)
+                .Builder("Water")
                 .locations(locations)
                 .build();
-        Assert.assertEquals(newSubLocation.getSubLocationName(),"Fossil");
-        Assert.assertEquals(subLocations.getSubLocationName(), "Fossil");
+        Assert.assertEquals(newSubLocation.getSubLocationName(),"Water");
+
 
     }
 }

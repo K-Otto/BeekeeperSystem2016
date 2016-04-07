@@ -28,13 +28,13 @@ public class BeekeeperFactoryTest {
 
 
         Beekeeper beekeeper = BeekeeperFactory.create(10.00, persons);
+        Assert.assertEquals(beekeeper.getSalary‭‭(), 10.00);
         Beekeeper newBeekeeper = new Beekeeper
-                .Builder‭(10.00)
-                .copy(beekeeper)
+                .Builder‭(11.00)
                 .persons(persons)
                 .build();
-        Assert.assertEquals(newBeekeeper.getSalary‭‭(),10.00);
-        Assert.assertEquals(beekeeper.getSalary‭‭(), 10.00);
+        Assert.assertEquals(newBeekeeper.getSalary‭‭(),11.00);
+
 
     }
 }

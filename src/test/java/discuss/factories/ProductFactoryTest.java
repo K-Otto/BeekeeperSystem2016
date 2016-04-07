@@ -35,14 +35,14 @@ public class ProductFactoryTest {
 
 
         Product buckets = ProductFactory.create(66.00, harvests);
-        Product newProduct = new Product
-                .Builder(buckets.getTotalStock())
+        Assert.assertEquals(buckets.getTotalStock(), 66.00);
 
-                .copy(buckets)
+        Product newProduct = new Product
+                .Builder(55.55)
                 .harvests(harvests)
                 .build();
-        Assert.assertEquals(newProduct.getTotalStock(), 66.00);
-        Assert.assertEquals(buckets.getTotalStock(), 66.00);
+        Assert.assertEquals(newProduct.getTotalStock(), 55.55);
+
 
     }
 }

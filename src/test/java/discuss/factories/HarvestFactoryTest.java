@@ -32,14 +32,15 @@ public class HarvestFactoryTest {
 
 
         Harvest harvests = HarvestFactory.create("Fossil", 66.00, subLocations);
+        Assert.assertEquals(harvests.getWeight(), 66.00);
         Harvest newHarvest = new Harvest
                 .Builder(harvests.getHarvestDate())
-                .totalWeight(55.55)
                 .copy(harvests)
+                .totalWeight(55.55)
                 .subLocations(subLocations)
                 .build();
-        Assert.assertEquals(newHarvest.getHarvestDate(),"Fossil");
-        Assert.assertEquals(harvests.getHarvestDate(), "Fossil");
+        Assert.assertEquals(newHarvest.getWeight(),55.55);
+
 
     }
 }

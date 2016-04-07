@@ -19,13 +19,14 @@ public class PersonFactoryTest {
     @Test
     public void testUpdate() throws Exception {
         Person role = PersonFactory.create("Karl", "Otto", "Karl@gmail.com");
+        Assert.assertEquals(role.getEmail(),"Karl@gmail.com");
         Person newBeekeeper = new Person
                 .Builder(role.getFirstName())
                 .copy(role)
-                .email("Karl@gmail.com")
+                .email("piet@gmail.com")
                 .build();
-        Assert.assertEquals(newBeekeeper.getEmail(),"Karl@gmail.com");
-        Assert.assertEquals(role.getLastName(),"Otto");
+        Assert.assertEquals(newBeekeeper.getEmail(),"piet@gmail.com");
+
 
     }
 }

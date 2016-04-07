@@ -25,13 +25,13 @@ public class SalesmanFactoryTest {
 
 
         Salesman salesman = SalesmanFactory.create(10.00, persons);
+        Assert.assertEquals(salesman.getSalary‭‭(), 10.00);
         Salesman newSalesman = new Salesman
-                .Builder‭(10.00)
-                .copy(salesman)
+                .Builder‭(12.00)
                 .persons(persons)
                 .build();
-        Assert.assertEquals(newSalesman.getSalary‭‭(),10.00);
-        Assert.assertEquals(salesman.getSalary‭‭(), 10.00);
+        Assert.assertEquals(newSalesman.getSalary‭‭(),12.00);
+
 
     }
 }

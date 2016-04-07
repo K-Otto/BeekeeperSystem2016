@@ -35,14 +35,14 @@ public class SuperFactoryTest {
         Hive hives = HiveFactory.create("sss", subLocations);
 
 
-        Super supers = SuperFactory.create("Fossil", hives);
+        Super supers = SuperFactory.create("Active", hives);
+        Assert.assertEquals(supers.getSuperState(), "Active");
         Super newSupers = new Super
-                .Builder("Fossil")
-                .copy(supers)
+                .Builder("Inactive")
                 .hives(hives)
                 .build();
-        Assert.assertEquals(newSupers.getSuperState(),"Fossil");
-        Assert.assertEquals(supers.getSuperState(), "Fossil");
+        Assert.assertEquals(newSupers.getSuperState(),"Inactive");
+
 
     }
 }

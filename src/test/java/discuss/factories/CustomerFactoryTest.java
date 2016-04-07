@@ -20,14 +20,13 @@ public class CustomerFactoryTest {
     @Test
     public void testUpdate() throws Exception {
         Person persons = PersonFactory.create("karl", "otto", "karl1256@yahoo.com");
-        Customer role = CustomerFactory.create("Melkbos", persons);
+        Customer role = CustomerFactory.create("Milnerton", persons);
+        Assert.assertEquals(role.getAddress(),"Milnerton");
         Customer newBeekeeper = new Customer
-                .Builder‭(role.getAddress())
-                .copy(role)
-
+                .Builder‭("Melkbos")
                 .build();
         Assert.assertEquals(newBeekeeper.getAddress(),"Melkbos");
-        Assert.assertEquals(role.getAddress(),"Melkbos");
+
 
     }
 }
