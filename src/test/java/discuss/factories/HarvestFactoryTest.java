@@ -34,7 +34,7 @@ public class HarvestFactoryTest {
         Harvest harvests = HarvestFactory.create("Fossil", 66.00, subLocations);
         Harvest newHarvest = new Harvest
                 .Builder(harvests.getHarvestDate())
-                .weight(55.55)
+                .totalWeight(55.55)
                 .copy(harvests)
                 .subLocations(subLocations)
                 .build();

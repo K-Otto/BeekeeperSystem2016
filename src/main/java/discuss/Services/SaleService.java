@@ -1,7 +1,5 @@
 package discuss.Services;
 
-import discuss.domain.Bucket;
-import discuss.domain.Customer;
 import discuss.domain.Sales;
 
 /**
@@ -19,9 +17,7 @@ public interface SaleService {
             String bFirstname,
             String bLastname,
             String bEmail,
-            String cFirstname,
-            String cLastname,
-            String cEmail,
+            String address,
             double salary
 
     );

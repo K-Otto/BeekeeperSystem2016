@@ -27,9 +27,7 @@ public class SaleServiceImpl implements SaleService {
                             String bFirstname,
                             String bLastname,
                             String bEmail,
-                            String cFirstname,
-                            String cLastname,
-                            String cEmail,
+                            String address,
                             double salary) {
         Person persons = PersonFactory
                 .create(bFirstname, bLastname, bEmail);
@@ -42,10 +40,10 @@ public class SaleServiceImpl implements SaleService {
                 .create(subLocationName, locations);
         Harvest harvests =  HarvestFactory
                 .create(harvestDate, harWeight, subLocations);
-        Bucket buckets =  BucketFactory
+        Product buckets =  ProductFactory
                 .create(bucWeight, harvests);
         Customer customers = CustomerFactory
-                .create(cFirstname, cLastname, cEmail);
+                .create(address,persons);
         Sales sales = SalesFactory
                 .create(salesDate,price, buckets,customers);
 

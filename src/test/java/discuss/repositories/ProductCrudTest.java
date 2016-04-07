@@ -15,16 +15,13 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by student on 2015/09/13.
  */
 @SpringApplicationConfiguration(classes= App.class)
 @WebAppConfiguration
 
-    public class BucketCrudTest extends AbstractTestNGSpringContextTests {
+    public class ProductCrudTest extends AbstractTestNGSpringContextTests {
         private Long id;
         @Autowired
         private BucketRepository repository;
@@ -37,7 +34,7 @@ import java.util.List;
             SubLocation subLocations = SubLocationFactory.create("Fossil", locations);
             Harvest harvests = HarvestFactory.create("Fossil", 66.00, subLocations);
 
-            Bucket role = BucketFactory.create( 22.00, harvests);
+            Product role = ProductFactory.create(22.00, harvests);
             repository.save(role);
             id=role.getId();
             Assert.assertNotNull(role);
@@ -45,7 +42,7 @@ import java.util.List;
 
         @Test(dependsOnMethods = "create")
         public void read() throws Exception {
-            Bucket role = repository.findOne(id);
+            Product role = repository.findOne(id);
             Assert.assertNotNull(role);
 
         }
@@ -54,9 +51,9 @@ import java.util.List;
         public void update() throws Exception {
 
 
-            Bucket role = repository.findOne(id);
-            Bucket newrole = new Bucket
-                    .Builder(role.getWeight())
+            Product role = repository.findOne(id);
+            Product newrole = new Product
+                    .Builder(role.getTotalStock())
                     .copy(role)
 
                     .build();
@@ -64,15 +61,15 @@ import java.util.List;
             repository.save(newrole);
 
             // GET THE SAVED ROLE
-            Bucket savedRole = repository.findOne(id);
-            Assert.assertEquals(savedRole.getWeight(),22.00);
+            Product savedRole = repository.findOne(id);
+            Assert.assertEquals(savedRole.getTotalStock(),22.00);
         }
 
         @Test(dependsOnMethods = "update")
         public void delete() throws Exception {
-            Bucket role = repository.findOne(id);
+            Product role = repository.findOne(id);
             repository.delete(role);
-            Bucket deletedRole = repository.findOne(id);
+            Product deletedRole = repository.findOne(id);
             Assert.assertNull(deletedRole);
 
         }

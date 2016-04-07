@@ -15,9 +15,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by student on 2015/09/13.
  */
@@ -35,8 +32,8 @@ public class SalesCrudTest extends AbstractTestNGSpringContextTests {
         Location locations = LocationFactory.create("Darling", beekeepers);
         SubLocation subLocations = SubLocationFactory.create("Fossil", locations);
         Harvest harvests = HarvestFactory.create("Fossil", 66.00, subLocations);
-        Customer customers = CustomerFactory.create("","","");
-        Bucket buckets = BucketFactory.create( 66.00, harvests);
+        Customer customers = CustomerFactory.create("",persons);
+        Product buckets = ProductFactory.create(66.00, harvests);
         Sales role = SalesFactory.create("date", 22.00,buckets, customers);
         repository.save(role);
         id=role.getId();

@@ -1,14 +1,10 @@
 package discuss.repositories;
 
 import discuss.App;
-import discuss.conf.factories.BucketFactory;
 import discuss.conf.factories.CustomerFactory;
-import discuss.conf.factories.SalesFactory;
-import discuss.domain.Bucket;
+import discuss.conf.factories.PersonFactory;
 import discuss.domain.Customer;
-import discuss.domain.Harvest;
-import discuss.domain.Sales;
-import discuss.respository.BucketRepository;
+import discuss.domain.Person;
 import discuss.respository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -20,9 +16,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by student on 2015/09/13.
@@ -38,13 +31,13 @@ public class CustomerCrudTest extends AbstractTestNGSpringContextTests{
 
     @Test
     public void create() throws Exception {
-
-        Customer customers = CustomerFactory.create("karl", "otto", "karl1256@yahoo.com");
+        Person persons = PersonFactory.create("Karl", "Otto","karl@gmail.com");
+        Customer customers = CustomerFactory.create("karl",persons);
 
         repository.save(customers);
-        id=customers.getId();
-        Assert.assertNotNull(customers.getId());
-        System.out.println(customers.getId());
+        id=customers.getCustomerID();
+        Assert.assertNotNull(customers.getCustomerID());
+        System.out.println(customers.getCustomerID());
     }
 
 
@@ -52,7 +45,7 @@ public class CustomerCrudTest extends AbstractTestNGSpringContextTests{
     public void read() throws Exception {
         Customer role = repository.findOne(id);
 
-        Assert.assertEquals("karl",role.getFirstName());
+        Assert.assertEquals("karl",role.getAddress());
 
     }
 
@@ -60,16 +53,16 @@ public class CustomerCrudTest extends AbstractTestNGSpringContextTests{
     public void update() throws Exception {
         Customer role = repository.findOne(id);
         Customer newrole = new Customer
-                .Builder(role.getFirstName())
+                .Builder‭(role.getAddress())
                 .copy(role)
-                .email("karl1256@gmail.com")
+
                 .build();
         // SAVE UPDATED ROLE
         repository.save(newrole);
 
         // GET THE SAVED ROLE
         Customer savedRole = repository.findOne(id);
-        Assert.assertEquals(savedRole.getEmail(),"karl1256@gmail.com");
+        Assert.assertEquals(savedRole.getAddress(),"karl1256@gmail.com");
     }
 
     @Test(dependsOnMethods = "update")

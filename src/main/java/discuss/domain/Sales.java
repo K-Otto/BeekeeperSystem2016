@@ -1,7 +1,6 @@
 package discuss.domain;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -17,7 +16,7 @@ public class Sales implements Serializable {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "bucketID")
-    private Bucket buckets;
+    private Product buckets;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "custID")
@@ -40,7 +39,7 @@ public class Sales implements Serializable {
         private String SalesDate;
         private Double price;
         private Customer customers;
-        private Bucket buckets;
+        private Product buckets;
 
 
         public Builder(String SalesDate) {
@@ -62,7 +61,7 @@ public class Sales implements Serializable {
             return this;
         }
 
-        public Builder buckets(Bucket value) {
+        public Builder buckets(Product value) {
             this.buckets = value;
             return this;
         }
@@ -98,7 +97,7 @@ public class Sales implements Serializable {
         return customers;
     }
 
-    public Bucket getBuckets() {
+    public Product getBuckets() {
         return buckets;
     }
 }

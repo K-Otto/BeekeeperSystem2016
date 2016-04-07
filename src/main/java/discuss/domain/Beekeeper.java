@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Beekeeper implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long LocID;
+    private long beekeeperID;
 
     private double salary;
 
@@ -28,12 +28,12 @@ public class Beekeeper implements Serializable {
     public Beekeeper (Builder‭ builder)
     {
         salary=builder.salary;
-        LocID=builder.LocID;
+        beekeeperID=builder.beekeeperID;
         persons=builder.persons;
     }
 
     public static class Builder‭{
-        private long LocID;
+        private long beekeeperID;
         private double salary;
         private Person persons;
 
@@ -43,7 +43,7 @@ public class Beekeeper implements Serializable {
         }
 
         public Builder‭ ID(Long value‭){
-            this.LocID = value‭;
+            this.beekeeperID = value‭;
             return this;
         }
 
@@ -53,7 +53,7 @@ public class Beekeeper implements Serializable {
         }
 
         public Builder‭ copy(Beekeeper value){
-            this.LocID=value.LocID;
+            this.beekeeperID=value.beekeeperID;
             this.salary=value.salary;
             this.persons=value.persons;
             return this;
@@ -63,7 +63,7 @@ public class Beekeeper implements Serializable {
         }
     }
     public long getBeekeeperID() {
-        return LocID;
+        return beekeeperID;
     }
     public double getSalary‭‭() {
         return salary;

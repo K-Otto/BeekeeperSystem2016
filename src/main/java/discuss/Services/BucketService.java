@@ -1,7 +1,6 @@
 package discuss.Services;
 
-import discuss.domain.Bucket;
-import discuss.domain.Harvest;
+import discuss.domain.Product;
 
 /**
  * Created by student on 2015/09/25.
@@ -20,5 +19,5 @@ public interface BucketService {
 
     );
 
-    Bucket getBucket(Long id);
+    Product getBucket(Long id);
 }

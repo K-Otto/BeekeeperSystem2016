@@ -39,7 +39,7 @@ public class BucketServiceImpl implements BucketService {
                 .create(subLocationName, locations);
         Harvest harvests =  HarvestFactory
                 .create(harvestDate, harWeight, subLocations);
-        Bucket buckets =  BucketFactory
+        Product buckets =  ProductFactory
                 .create(bucWeight, harvests);
 
 
@@ -48,7 +48,7 @@ public class BucketServiceImpl implements BucketService {
     }
 
     @Override
-    public Bucket getBucket (Long id) {
+    public Product getBucket (Long id) {
 
         return repository.findOne(id);
     }

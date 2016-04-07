@@ -1,7 +1,9 @@
 package discuss.factories;
 
 import discuss.conf.factories.CustomerFactory;
+import discuss.conf.factories.PersonFactory;
 import discuss.domain.Customer;
+import discuss.domain.Person;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 /**
@@ -10,20 +12,22 @@ import org.testng.annotations.Test;
 public class CustomerFactoryTest {
     @Test
     public void testCreate() throws Exception {
-        Customer role = CustomerFactory.create("Karl", "Piet", "Karl@gmail.com");
-        Assert.assertEquals(role.getFirstName(),"Karl");
+        Person persons = PersonFactory.create("karl", "otto", "karl@gmail.com");
+        Customer role = CustomerFactory.create("Milnerton",persons);
+        Assert.assertEquals(role.getAddress(),"Milnerton");
     }
 
     @Test
     public void testUpdate() throws Exception {
-        Customer role = CustomerFactory.create("Karl", "Otto", "Karl@gmail.com");
+        Person persons = PersonFactory.create("karl", "otto", "karl1256@yahoo.com");
+        Customer role = CustomerFactory.create("Melkbos", persons);
         Customer newBeekeeper = new Customer
-                .Builder(role.getFirstName())
+                .Builder‭(role.getAddress())
                 .copy(role)
-                .email("Karl@gmail.com")
+
                 .build();
-        Assert.assertEquals(newBeekeeper.getEmail(),"Karl@gmail.com");
-        Assert.assertEquals(role.getLastName(),"Otto");
+        Assert.assertEquals(newBeekeeper.getAddress(),"Melkbos");
+        Assert.assertEquals(role.getAddress(),"Melkbos");
 
     }
 }

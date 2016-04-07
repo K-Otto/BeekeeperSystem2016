@@ -1,16 +1,14 @@
 package discuss.conf.factories;
 
-import discuss.domain.Bucket;
+import discuss.domain.Product;
 import discuss.domain.Harvest;
-
-import java.util.List;
 
 /**
  * Created by student on 2015/09/13.
  */
-public class BucketFactory {
-    public static Bucket create(Double weight, Harvest harvests){
-        Bucket buckets= new Bucket.Builder(weight)
+public class ProductFactory {
+    public static Product create(Double weight, Harvest harvests){
+        Product buckets= new Product.Builder(weight)
                 .harvests(harvests)
                 .build();
         return buckets;

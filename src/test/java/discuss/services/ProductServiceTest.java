@@ -2,7 +2,6 @@ package discuss.services;
 
 import discuss.App;
 import discuss.Services.BucketService;
-import discuss.Services.HarvestService;
 import discuss.conf.factories.*;
 import discuss.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +16,10 @@ import org.testng.annotations.Test;
  */
 @SpringApplicationConfiguration(classes= App.class)
 @WebAppConfiguration
-public class BucketServiceTest extends AbstractTestNGSpringContextTests {
+public class ProductServiceTest extends AbstractTestNGSpringContextTests {
 
     private Long id;
-    private Bucket bucketGlobal;
+    private Product productGlobal;
 
     @Autowired
     private BucketService service;
@@ -37,12 +36,12 @@ public class BucketServiceTest extends AbstractTestNGSpringContextTests {
                 .create("Waterhole", locations);
         Harvest harvests = HarvestFactory
                 .create("December", 22.00, sublocations);
-        Bucket buckets = BucketFactory
+        Product buckets = ProductFactory
                 .create(22.00, harvests);
 
 
         service.saveBucket(
-                buckets.getWeight(),
+                buckets.getTotalStock(),
                 harvests.getHarvestDate(),
                 harvests.getWeight(),
                 sublocations.getSubLocationName(),
@@ -55,7 +54,7 @@ public class BucketServiceTest extends AbstractTestNGSpringContextTests {
 
 
         id = buckets.getId();
-        bucketGlobal = buckets;
+        productGlobal = buckets;
         Assert.assertNotNull(buckets);
     }
 
@@ -64,9 +63,9 @@ public class BucketServiceTest extends AbstractTestNGSpringContextTests {
         // Get subject
       //  String idtest = id + "";
       //  Long longId = Long.parseLong(idtest);
-      //  Bucket buckets = service.getBucket(longId);
-      //  bucketGlobal = service.getBucket(longId);
-      //  Assert.assertNotNull(bucketGlobal);
+      //  Product buckets = service.getBucket(longId);
+      //  productGlobal = service.getBucket(longId);
+      //  Assert.assertNotNull(productGlobal);
     }
 
 }

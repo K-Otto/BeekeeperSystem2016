@@ -1,43 +1,50 @@
 package discuss.domain;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.*;
 /**
  * Created by student on 2015/09/13.
  */
 @Entity
-public class Bucket implements Serializable {
+public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long bucketID;
 
-    private Double weight;
+    private double totalStock;
+    private double totalStockRemaining;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "harvestID")
     private Harvest harvests;
 
 
-    private Bucket() {
+    private Product() {
     }
 
-    public Bucket(Builder builder) {
+    public Product(Builder builder) {
         bucketID = builder.bucketID;
-        weight = builder.weight;
+        totalStock = builder.totalStock;
+        totalStockRemaining = builder.totalStockRemaining;
 
     }
 
     public static class Builder {
         private Long bucketID;
-        private Double weight;
+        private double totalStock;
+        private double totalStockRemaining;
         private Harvest harvests;
 
 
-        public Builder(Double weight) {
-            this.weight = weight;
+        public Builder(double totalStock) {
+            this.totalStock = totalStock;
         }
 
+
+        public Builder totalStockRemaining(double value) {
+            this.totalStockRemaining = value;
+            return this;
+        }
         public Builder id(Long value) {
             this.bucketID = value;
             return this;
@@ -48,15 +55,16 @@ public class Bucket implements Serializable {
             return this;
         }
 
-        public Builder copy(Bucket value) {
+        public Builder copy(Product value) {
             this.bucketID = value.bucketID;
-            this.weight = value.weight;
+            this.totalStock = value.totalStock;
+            this.totalStockRemaining = value.totalStockRemaining;
             this.harvests = value.harvests;
             return this;
         }
 
-        public Bucket build() {
-            return new Bucket(this);
+        public Product build() {
+            return new Product(this);
         }
     }
 
@@ -64,8 +72,12 @@ public class Bucket implements Serializable {
         return bucketID;
     }
 
-    public Double getWeight() {
-        return weight;
+    public Double getTotalStock() {
+        return totalStock;
+    }
+
+    public Double getTotalStockRemaining() {
+        return totalStockRemaining;
     }
 
     public Harvest getHarvests() {

@@ -10,66 +10,66 @@ import javax.persistence.*;
 public class Customer  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long custID;
+    private long customerID;
 
-    private String firstName;
-    private String lastName;
-    private String email;
+    private String address;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "beeID")
+    private Person persons;
 
 
-    private Customer () {
+    private Customer() {
     }
 
 
-    public long getId() {
-        return custID;
-    }
-    public String getFirstName() {
-        return firstName;
-    }
-    public String getLastName() {
-        return lastName;
-    }
-    public String getEmail() {
-        return email;
+    public Customer(Builder‭ builder) {
+        address = builder.address;
+        customerID = builder.customerID;
+        persons = builder.persons;
     }
 
-    public Customer(Builder builder){
-        custID=builder.custID;
-        firstName=builder.firstName;
-        lastName=builder.lastName;
-        email=builder.email;
-    }
+    public static class Builder‭ {
+        private long customerID;
+        private String address;
+        private Person persons;
 
-    public static class Builder{
-        private String firstName;
-        private String lastName;
-        private String email;
-        private long custID;
-        public Builder(String lastName) {
-            this.lastName = lastName;
+
+        public Builder‭(String address) {
+            this.address = address;
         }
 
-        public Builder firstName(String value){
-            this.firstName=value;
+        public Builder‭ ID(Long value‭) {
+            this.customerID = value‭;
             return this;
         }
 
-        public Builder email(String value){
-            this.email=value;
-            return this;
-
-        }
-        public Builder copy(Customer value){
-            this.custID = value.custID;
-            this.lastName =value.lastName ;
-            this.firstName=value.firstName;
-            this.email=value.email;
+        public Builder‭ persons(Person value) {
+            this.persons = value;
             return this;
         }
 
-        public Customer build(){
+        public Builder‭ copy(Customer value) {
+            this.customerID = value.customerID;
+            this.address = value.address;
+            this.persons = value.persons;
+            return this;
+        }
+
+        public Customer build() {
             return new Customer(this);
         }
+    }
+
+    public long getCustomerID() {
+        return customerID;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public Person getPersons() {
+        return persons;
     }
 }
